@@ -33,7 +33,7 @@ API REST con interfaz web para la gestión de una biblioteca: libros, usuarios (
 
 ---
 
-## 🗄️ Variables de entorno
+## Variables de entorno
 
 La aplicación lee las credenciales de base de datos desde variables de entorno.  
 Crea un archivo **`.env`** en la raíz del proyecto con el siguiente contenido:
@@ -163,7 +163,7 @@ Accede a la interfaz Thymeleaf desde el navegador:
 
 ---
 
-## 📋 Ejemplos de peticiones y respuestas
+## Ejemplos de peticiones y respuestas
 
 ### Registrar un libro
 
