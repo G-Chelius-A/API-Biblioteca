@@ -60,7 +60,7 @@ DB_PASSWORD="tu_contraseña"
 
 ```bash
 git clone https://github.com/G-Chelius-A/API-Biblioteca
-cd libreria
+cd API-Biblioteca
 ```
 
 ### 2. Crear la base de datos en MySQL
