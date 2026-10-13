@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
 
 /**
  * Entidad JPA para el control de libros en la biblioteca mediante la tabla
@@ -45,9 +46,11 @@ public class LibroModel {
     @Column(name = "anio_publicacion", length = 100)
     private Integer anioPublicacion;
 
+    @Min(1) // Mínimo 1 ejemplar
     @Column(name = "numero_ejemplares", nullable = false)
     private Integer numeroEjemplares;
 
+    @Min(0) //Mínimo 0 ejemplares disponibles
     @Column(name = "ejemplares_disponibles", nullable = false)
     private Integer ejemplaresDisponibles;
 
