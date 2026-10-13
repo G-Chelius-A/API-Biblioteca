@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.api.libreria.models.UsuarioModel;
 import com.api.libreria.services.UsuarioService;
+import jakarta.validation.Valid;
 
 /**
  * Controlador REST que expone los endpoints de la API para la gestión de
@@ -56,7 +57,7 @@ public class UsuarioController {
      */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public UsuarioModel guardarUsuario(@RequestBody UsuarioModel usuario) {
+    public UsuarioModel guardarUsuario(@Valid @RequestBody UsuarioModel usuario) {
         return this.usuarioService.guardarUsuario(usuario);
     }
 
@@ -82,7 +83,7 @@ public class UsuarioController {
      * @return el {@link UsuarioModel} actualizado y persistido.
      */
     @PutMapping(path = "/{id}")
-    public UsuarioModel actualizarUsuario(@RequestBody UsuarioModel request, @PathVariable("id") Long id) {
+    public UsuarioModel actualizarUsuario(@Valid @RequestBody UsuarioModel request, @PathVariable("id") Long id) {
         return this.usuarioService.actualizarUsuario(request, id);
     }
 

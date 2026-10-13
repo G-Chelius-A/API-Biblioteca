@@ -21,6 +21,7 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
@@ -110,10 +111,11 @@ public class UsuarioModel {
 
     /**
      * Fecha de nacimiento del usuario. Campo obligatorio e inmutable después
-     * de la creación del registro.
+     * de la creación del registro. No puede ser una fecha futura.
      */
     @Column(nullable = false, updatable = false)
     @NotNull(message = "Se requiere una fecha de nacimiento")
+    @Past(message = "La fecha de nacimiento no puede ser en el futuro")
     private LocalDate fechaNacimiento;
 
     /**

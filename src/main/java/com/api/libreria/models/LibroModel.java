@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
+import com.api.libreria.utils.AnioNoFuturo;
 import jakarta.validation.constraints.Min;
 
 /**
@@ -43,6 +44,7 @@ public class LibroModel {
     @Column(name = "autor", length = 100)
     private String autor;
 
+    @AnioNoFuturo(message = "El año de publicación no puede ser en el futuro")
     @Column(name = "anio_publicacion", length = 100)
     private Integer anioPublicacion;
 

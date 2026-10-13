@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.api.libreria.models.LibroModel;
 import com.api.libreria.services.LibroService;
+import jakarta.validation.Valid;
 
 /**
  * Controlador REST que expone los endpoints de la API para la gestión de
@@ -55,7 +56,7 @@ public class LibroController {
      */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public LibroModel gaurdarLibro(@RequestBody LibroModel libro) {
+    public LibroModel gaurdarLibro(@Valid @RequestBody LibroModel libro) {
         return this.libroService.guardarLibro(libro);
     }
 
@@ -79,7 +80,7 @@ public class LibroController {
      * @return el {@link LibroModel} actualizado y persistido.
      */
     @PutMapping(path = "/{isbn}")
-    public LibroModel actualizarLibro(@RequestBody LibroModel request, @PathVariable("isbn") Long isbn) {
+    public LibroModel actualizarLibro(@Valid @RequestBody LibroModel request, @PathVariable("isbn") Long isbn) {
         return this.libroService.actualizarLibro(request, isbn);
     }
 
