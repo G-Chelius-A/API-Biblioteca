@@ -363,3 +363,5 @@ src/main/java/com/api/libreria/
 ```
 
 ---
+
+> DISCLAIMER: A partir del planteamiento original del proyecto, se potenció con diferentes herramientas generativas sin afectar la lógica original del mismo. Entre estos apartados radican estilos, uso complejo de anotaciones, JavaDocs a escala masiva, etc.
