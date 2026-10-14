@@ -48,7 +48,8 @@ public class PrestamoController {
      * {@code POST /prestamos} — Registra un nuevo préstamo.
      * Responde con {@code 201 Created} si el registro es exitoso.
      *
-     * @param prestamo el {@link PrestamoModel} a guardar, deserializado del cuerpo JSON.
+     * @param prestamo el {@link PrestamoModel} a guardar, deserializado del cuerpo
+     *                 JSON.
      * @return el {@link PrestamoModel} guardado con sus datos completos.
      */
     @ResponseStatus(HttpStatus.CREATED)
@@ -91,7 +92,7 @@ public class PrestamoController {
      */
     @PutMapping(path = "/{id}")
     public PrestamoModel actualizarPrestamo(@RequestBody PrestamoModel request,
-                                            @PathVariable Long id) {
+            @PathVariable Long id) {
         return prestamoService.actualizarPrestamo(request, id);
     }
 

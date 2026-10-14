@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -186,7 +186,7 @@ public class UsuarioModel {
      * y se ignora la referencia inversa al serializar a JSON para evitar recursión.
      */
     @OneToMany(mappedBy = "socio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnoreProperties("socio")
+    @JsonIgnore
     private List<PrestamoModel> prestamo;
 
     /**

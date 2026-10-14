@@ -2,7 +2,7 @@ package com.api.libreria.models;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -52,7 +52,7 @@ public class LibroModel {
     @Column(name = "numero_ejemplares", nullable = false)
     private Integer numeroEjemplares;
 
-    @Min(0) //Mínimo 0 ejemplares disponibles
+    @Min(0) // Mínimo 0 ejemplares disponibles
     @Column(name = "ejemplares_disponibles", nullable = false)
     private Integer ejemplaresDisponibles;
 
@@ -63,7 +63,7 @@ public class LibroModel {
      * y se ignora la referencia inversa al serializar a JSON para evitar recursión.
      */
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnoreProperties("libro")
+    @JsonIgnore
     private List<PrestamoModel> prestamo;
 
     /**
