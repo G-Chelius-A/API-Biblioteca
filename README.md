@@ -2,6 +2,8 @@
 
 API REST con interfaz web para la gestión de una biblioteca: libros, usuarios (socios) y préstamos. Desarrollada con Spring Boot 4 y MySQL.
 
+![Diagrama](DIAGRAMA.png)
+
 ##  Autor
 
 **Gerardo Yeray Chelius Altamirano |**
